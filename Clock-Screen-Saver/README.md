@@ -33,7 +33,7 @@
     ren Clock-Screen-Saver.exe Clock-Screen-Saver.scr
     ```
 
-5. move file to `C:/windows/system32`
+5. move the file to `C:/windows/system32` (Administrator access is required)
 
     ```bash
     mv Clock-Screen-Saver.scr C:/windows/system32
@@ -61,7 +61,7 @@ Done :)
     reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaveTimeOut /t REG_SZ /d 600 /f
     ```
     
-- Also, you don't need to rename the file to 'scr' extension. Instead, you can directly install the file with 'exe' extension.
+- Also, you don't need to rename the file to 'scr' extension. Instead, you can directly install the file with the 'exe' extension.
 
     ```bash
     reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v SCRNSAVE.EXE /t REG_SZ /d C:\Windows\system32\Clock-Screen-Saver.exe /f
