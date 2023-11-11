@@ -33,10 +33,36 @@
     ren Clock-Screen-Saver.exe Clock-Screen-Saver.scr
     ```
 
-5. Open the folder with the explorer
+5. move file to `C:/windows/system32`
 
     ```bash
-    explorer .
+    mv Clock-Screen-Saver.scr C:/windows/system32
     ```
 
-6. NOW Right click on the final file and click `install` : )
+6. install the new screen saver:
+
+    ```bash
+     reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v SCRNSAVE.EXE /t REG_SZ /d C:\Windows\system32\Clock-Screen-Saver.scr /f
+    ```
+
+Done :)
+
+## Tips:
+
+- To see all screen savers:
+
+    ```bash
+    dir c:\windows\system32\*scr
+    ```
+    
+- You can adjust the duration of the screen timeout:
+
+    ```bash
+    reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaveTimeOut /t REG_SZ /d 600 /f
+    ```
+    
+- Also, you don't need to rename the file to 'scr' extension. Instead, you can directly install the file with 'exe' extension.
+
+    ```bash
+    reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v SCRNSAVE.EXE /t REG_SZ /d C:\Windows\system32\Clock-Screen-Saver.exe /f
+    ```
