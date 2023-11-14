@@ -44,6 +44,9 @@
     ```bash
      reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v SCRNSAVE.EXE /t REG_SZ /d C:\Windows\system32\Clock-Screen-Saver.scr /f
     ```
+    
+    > reg add flags: `/v` \<Valuename\>, `/t` \<Type\>, `/d` \<Data\>, `/f` Adds the registry entry without prompting for confirmation.
+    > [More about reg command](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg)
 
 Done :)
 
