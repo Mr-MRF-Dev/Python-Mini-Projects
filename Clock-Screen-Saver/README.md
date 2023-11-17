@@ -9,23 +9,31 @@
 
 2. clone code
 
+    use [Git](https://git-scm.com/) on your system
+   
     ```bash
-    # use git on your system
     git clone https://github.com/Mr-MRF-Dev/python-mini-projects.git
+    ```
+    
+    or use [GitHub CLI](https://cli.github.com/)
 
-    # or use github CLI
+    ```bash
     gh repo clone Mr-MRF-Dev/python-mini-projects
+    ```
 
+3. The next step is to Change your directory.
+    
+    ```bash
     cd python-mini-projects/Clock-Screen-Saver
     ```
 
-3. Create exe File
+4. Create exe File
 
    ```bash
    pyinstaller --noconfirm --onefile --windowed  .\Clock-Screen-Saver.py
    ```
 
-4. Change the file format to `scr`
+5. Change the file format to `scr`
 
     ```bash
     cd dist
@@ -33,13 +41,13 @@
     ren Clock-Screen-Saver.exe Clock-Screen-Saver.scr
     ```
 
-5. move the file to `C:/windows/system32` (Administrator access is required)
+6. move the file to `C:/windows/system32` (Administrator access is required)
 
     ```bash
     mv Clock-Screen-Saver.scr C:/windows/system32
     ```
 
-6. install the new screen saver:
+7. install the new screen saver:
 
     ```bash
      reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v SCRNSAVE.EXE /t REG_SZ /d C:\Windows\system32\Clock-Screen-Saver.scr /f
@@ -58,7 +66,7 @@ Done :)
     dir c:\windows\system32\*scr
     ```
     
-- You can adjust the duration of the screen timeout:
+- You can adjust the duration of the screen timeout (600 sec):
 
     ```bash
     reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaveTimeOut /t REG_SZ /d 600 /f
